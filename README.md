@@ -29,7 +29,7 @@ Supported platforms
 
 Requirements
 ------------
-* .NET Framework 2.0 and above.
+* .NET Framework 2.0 and above. Project set to Framework 4.6.1
 
 Controls supported
 ------------------
