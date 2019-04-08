@@ -3,12 +3,9 @@ MetroFramework - WinForms on steroids.
 
 Brings the new Modern UI alias Metro UI of Windows 8 to .NET Windows Forms applications. 
 
-Install via NuGet 
+Forked from repos: https://github.com/dennismagno/metroframework-modern-ui
 ------------------
-    Install-Package MetroModernUI
 
-[Updated to Version 1.4.0](http://denricdenise.info/2016/07/metroframework-modern-ui-version-1-4-0/)
-Link: https://www.nuget.org/packages/MetroModernUI/
 
 Documentation
 -------------------
