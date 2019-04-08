@@ -26,7 +26,7 @@ Supported platforms
 
 Requirements
 ------------
-* .NET Framework 2.0 and above. Project set to Framework 4.6.1
+* .NET Framework 2.0 and above. Project set to Framework 4.6.1 by default
 
 Controls supported
 ------------------
