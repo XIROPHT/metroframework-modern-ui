@@ -236,6 +236,9 @@ namespace MetroFramework.Drawing
                 if (theme == MetroThemeStyle.Dark)
                     return Color.FromArgb(17, 17, 17);
 
+                if (theme == MetroThemeStyle.Custom)
+                    return MetroColors.Custom;
+
                 return Color.FromArgb(255, 255, 255);
             }
 
@@ -467,6 +470,8 @@ namespace MetroFramework.Drawing
                 {
                     if (theme == MetroThemeStyle.Dark)
                         return Color.FromArgb(204, 204, 204);
+                    if (theme == MetroThemeStyle.Custom)
+                        return MetroColors.Custom;
 
                     return Color.FromArgb(0, 0, 0);
                 }
@@ -491,6 +496,8 @@ namespace MetroFramework.Drawing
                 {
                     if (theme == MetroThemeStyle.Dark)
                         return Color.FromArgb(109, 109, 109);
+                    if (theme == MetroThemeStyle.Custom)
+                        return MetroColors.Custom;
 
                     return Color.FromArgb(136, 136, 136);
                 }

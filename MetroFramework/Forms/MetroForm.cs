@@ -71,10 +71,12 @@ namespace MetroFramework.Forms
         BottomRight
     }
 
+
     #endregion
 
     public class MetroForm : Form, IMetroForm, IDisposable
     {
+
         #region Interface
 
         private MetroColorStyle metroStyle = MetroColorStyle.Blue;
@@ -304,6 +306,7 @@ namespace MetroFramework.Forms
             Name = "MetroForm";
             StartPosition = FormStartPosition.CenterScreen;
             TransparencyKey = Color.Lavender;
+            
         }
 
         protected override void Dispose(bool disposing)
@@ -349,7 +352,7 @@ namespace MetroFramework.Forms
         protected override void OnPaint(PaintEventArgs e)
         {
             Color backColor = MetroPaint.BackColor.Form(Theme);
-            Color foreColor = MetroPaint.ForeColor.Title(Theme);
+            Color foreColor = ForeColor;
 
             e.Graphics.Clear(backColor);
 
@@ -423,6 +426,25 @@ namespace MetroFramework.Forms
                     });
                 }
             }
+        }
+
+
+        private bool useCustomBackColor = true;
+        [DefaultValue(true)]
+        [Category(MetroDefaults.PropertyCategory.Appearance)]
+        public bool UseCustomBackColor
+        {
+            get { return useCustomBackColor; }
+            set { useCustomBackColor = value; }
+        }
+
+        private bool useCustomForeColor = false;
+        [DefaultValue(false)]
+        [Category(MetroDefaults.PropertyCategory.Appearance)]
+        public bool UseCustomForeColor
+        {
+            get { return useCustomForeColor; }
+            set { useCustomForeColor = value; }
         }
 
         private TextFormatFlags GetTextFormatFlags()
@@ -904,8 +926,8 @@ namespace MetroFramework.Forms
                 set { metroStyleManager = value; }
             }
 
-            private bool useCustomBackColor = false;
-            [DefaultValue(false)]
+            private bool useCustomBackColor = true;
+            [DefaultValue(true)]
             [Category(MetroDefaults.PropertyCategory.Appearance)]
             public bool UseCustomBackColor
             {
@@ -991,7 +1013,7 @@ namespace MetroFramework.Forms
 
                 if (isHovered && !isPressed && Enabled)
                 {
-                    foreColor = MetroPaint.ForeColor.Button.Normal(_Theme);
+                    foreColor = ForeColor;
                     backColor = MetroPaint.BackColor.Button.Normal(_Theme);
                 }
                 else if (isHovered && isPressed && Enabled)
@@ -1006,7 +1028,7 @@ namespace MetroFramework.Forms
                 }
                 else
                 {
-                    foreColor = MetroPaint.ForeColor.Button.Normal(_Theme);
+                    foreColor = ForeColor;
                 }
 
                 e.Graphics.Clear(backColor);
